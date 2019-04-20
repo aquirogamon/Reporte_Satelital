@@ -1,0 +1,49 @@
+<%= form_for(@link) do |f| %>
+    <% @link.errors.full_messages.each do |message| %>
+      <div class="be-red white field top-space">
+        * <%= message %>
+      </div>
+    <%end%>
+    <div class="field">
+      <%= f.text_field :Provedor_Enlace, placeholder: "Escriba el Proveedor del Enlace", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :Red_Satelital, placeholder: "Escriba La Red del Enlace", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :Razon_Social, placeholder: "Escriba la Razón Social", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :Codigo, placeholder: "Escriba el Código", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :Site, placeholder: "Escriba el Site", class:"form-control-comm"%>
+    </div>
+    <div class="field">
+      <%= f.text_field :Nombre_Enlace, placeholder: "Escriba el Nombre del Enlace", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :CID, placeholder: "Escriba el CID", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :Sector_Red, placeholder: "Escriba el Sector de Red", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :Estado, placeholder: "Escriba el Estado del Enlace", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :Satelite, placeholder: "Escriba el Satélite", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :Tipo, placeholder: "Escriba el Tipo del Enlace", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.number_field :Capacidad_Mbps, placeholder: "Escriba el Capacidad en Kbps", class:"form-control-comm" %>
+    </div>
+    <div class="field">
+      <%= f.number_field :Capacidad_Mhz, placeholder: "Escriba el Capacidad en Mhz", class:"form-control-comm", :step => 'any' %>
+    </div>
+    <div class="field">
+      <%= f.submit "Guardar", class:"btn be-red white" %>
+    </div>
+  <%end%>

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Provedor_Enlace: MyString
+  Red_Satelital: MyString
+  Razon_Social: MyString
+  Codigo: MyString
+  Site: MyString
+  Nombre_Enlace: MyString
+  CID: MyString
+  Sector_Red: MyString
+  Estado: MyString
+  Satelite: MyString
+  Tipo: MyString
+  Capacidad_Mbps: 1
+  Capacidad_Mhz: 1.5
+
+two:
+  Provedor_Enlace: MyString
+  Red_Satelital: MyString
+  Razon_Social: MyString
+  Codigo: MyString
+  Site: MyString
+  Nombre_Enlace: MyString
+  CID: MyString
+  Sector_Red: MyString
+  Estado: MyString
+  Satelite: MyString
+  Tipo: MyString
+  Capacidad_Mbps: 1
+  Capacidad_Mhz: 1.5

@@ -1,0 +1,29 @@
+Link.create( Provedor_Enlace: "LEVEL 3(IMPSAT)", Red_Satelital: "Terceros", Razon_Social: "AMERICA MOVIL PERU S.A.C.", Codigo: "LL3403", Site: "Loreto I", Nombre_Enlace: "Loreto I", CID: "27288", Sector_Red: "Red Móvil", Estado: "Inoperativo", Satelite: "Satmex VI", Tipo: "-", Capacidad_Mbps: 2048, Capacidad_Mhz: 0 )
+
+Link.create( Provedor_Enlace: "AMERICA MOVIL PERU S.A.C.", Red_Satelital: "CLARO SATELITAL", Razon_Social: "AMERICA MOVIL PERU S.A.C.", Codigo: "LL3403", Site: "Loreto", Nombre_Enlace: "LORETO IV - OSR 1 - CinC FE (25Mbps) ", CID: "2765101", Sector_Red: "Red Móvil", Estado: "Operativo", Satelite: "Satmex 7", Tipo: "CinC", Capacidad_Mbps: 15000, Capacidad_Mhz: 18.0000 )
+
+Link.create( Provedor_Enlace: "AMERICA MOVIL PERU S.A.C.", Red_Satelital: "CLARO SATELITAL", Razon_Social: "AMERICA MOVIL PERU S.A.C.", Codigo: "LL3403", Site: "Loreto", Nombre_Enlace: "LORETO III- OSR 2 - CinC FE (25Mbps) ", CID: "2520969", Sector_Red: "Red Móvil", Estado: "Operativo", Satelite: "Satmex 7", Tipo: "CinC", Capacidad_Mbps: 15000, Capacidad_Mhz: 18.0000 )
+
+Link.create( Provedor_Enlace: "CLARO (TELMEX)", Red_Satelital: "CLARO SATELITAL", Razon_Social: "AMERICA MOVIL PERU S.A.C.", Codigo: "LM3501", Site: "Puerto Maldonado", Nombre_Enlace: "Puerto Maldonado I", CID: "27283", Sector_Red: "Red Móvil", Estado: "Operativo", Satelite: "Satmex VI", Tipo: "CinC", Capacidad_Mbps: 2048, Capacidad_Mhz: 2.0070 )
+
+Link.create( Provedor_Enlace: "CLARO (TELMEX)", Red_Satelital: "CLARO SATELITAL", Razon_Social: "AMERICA MOVIL PERU S.A.C.", Codigo: "LM3501", Site: "Puerto Maldonado", Nombre_Enlace: "Puerto Maldonado II", CID: "37485", Sector_Red: "Red Móvil", Estado: "Operativo", Satelite: "Satmex VI", Tipo: "CinC", Capacidad_Mbps: 2048, Capacidad_Mhz: 1.8210 )
+
+Link.create( Provedor_Enlace: "CLARO (TELMEX)", Red_Satelital: "CLARO SATELITAL", Razon_Social: "MINSUR S.A", Codigo: "-", Site: "MINSUR", Nombre_Enlace: "SEDE PALCA", CID: "3626158", Sector_Red: "Corporativo", Estado: "Operativo", Satelite: "Satmex VI", Tipo: "CinC", Capacidad_Mbps: 128, Capacidad_Mhz: 0.1250 )
+
+
+
+rails g model Link Provedor_Enlace Red_Satelital Razon_Social Codigo Site Nombre_Enlace CID Sector_Red Estado Satelite Tipo Capacidad_Mbps:integer Capacidad_Mhz:float
+
+https://github.com/aquirogam/Reporte_Satelital.git
+
+Link.where(Estado: "Operativo").count
+
+Link.where("Estado: ? AND Razon_Social: ? AND Satelite: ?).count
+
+
+@index_estado = Link.where(["Estado = ? and Razon_Social = ?", "Operativo", "AMERICA MOVIL PERU S.A.C."])
+
+@CLI_AMX_SAT6 = @index_estado.where(["Razon_Social: "AMERICA MOVIL PERU S.A.C.").count
+		@CLI_TMX_SAT6 = Link.where(["Estado = ? and Razon_Social = ? and Satelite= ?", "Operativo", "TELMEX PERU S.A.", "Satmex VI"]).count
+
+@index_estado = Link.where.not(["Estado = ? or Razon_Social = ?", "Inoperativo", "AMERICA MOVIL PERU S.A.C."])

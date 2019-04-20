@@ -1,0 +1,50 @@
+<div class="row center-xs">
+  <div class="col-md-10">
+    <div class="text-left">
+      <h3>Histórico de Enlaces Satelitales</h3>
+      <h4><%=link_to "Crear", new_link_path(@link), class:"btn white be-red top-space "%></h4>
+    </div>
+  </div>
+</div>
+
+<div style="width:100%;margin:0 auto;">
+  <table style="width:100%">
+        <tr>
+          <th>Item</th>
+          <th>Provedor de Enlace</th>
+          <th>Red_Satelital</th>
+          <th>Razon_Social</th>
+          <th>Código</th>
+          <th>Site</th>
+          <th>Nombre de Enlace</th>
+          <th>CID</th>
+          <th>Sector de Red</th>
+          <th>Estado</th>
+          <th>Satélite</th>
+          <th>Tipo de Enlace</th>
+          <th>Capacidad (Kbps)</th>
+          <th>Capacidad (Mhz)</th>
+        </tr>
+        <% i=0 %>
+        <% @links.each do |link| %>
+          <tr>
+            <% i+=1 %>
+            <td><%= link_to i, link %></td>
+            <td><%= link.Provedor_Enlace %></td>
+            <td><%= link.Red_Satelital %></td>
+            <td><%= link.Razon_Social %></td>
+            <td><%= link.Codigo %></td>
+            <td><%= link.Site %></td>
+            <td><%= link.Nombre_Enlace %></td>
+            <td><%= link_to link.CID, link %></td>
+            <td><%= link.Sector_Red %></td>
+            <td><%= link.Estado %></td>
+            <td><%= link.Satelite %></td>
+            <td><%= link.Tipo %></td>
+            <td><%= link.Capacidad_Mbps %></td>
+            <td><%= link.Capacidad_Mhz %></td>
+          </tr>
+        <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-md-2">
+    <div class="col-md-8">
+      <h3>Capacidad de Enlaces Satelitales </h3>
+      <h4><%=link_to "Actualizar", satelitalreports_satelitals_path,  method: :post, class:"btn white be-red top-space "%></h4>
+      <h3 class:"btn">Actualizado</h3>
+      <% unless Satelital.last == nil %>
+      <h3 class:"btn">Ppmroute.last.created_at.strftime("%d/%m/%Y %H:%M:%S")</h3>
+      <% else %>
+      <h3 class:"btn">'-'</h3>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <div class="col-md-8">
+      <h4><%=link_to "Volver", satelitalreports_path, class:"float-left"%></h4>
+      <div class:"float-rigth">
+        <%=form_tag satelitalreports_satelital_path(:id), :method => :get do
+        collection_select(:satelital, :id, Satelital.all, :id, :created_at, prompt: "10 Reportes anteriores"
+        submit_tag "Consultar", :name => nil, class: 'btn btn-sm btn-info'%>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row margin-top-00">
+  <div class="col-md-2">
+    <table style="width:100%">
+    <thead>
+      <tr>
+        <th>Clientes</th>
+        <th>Nº Enlaces</th>
+        <th>Capac. (Kbps)</th>
+        <th>Capac. (Mhz)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% unless Satelital.last == nil %>
+        <% @table.map do |item| %>
+          <tr>
+            <td>AMERICA MOVIL PERU S.A.C.</td>
+            <td><%= item.Provedor_Enlace %></td>
+          </tr>
+          <tr>
+            <td>TELMEX PERU S.A.</td>
+            <td>Distribución de Capacidades</td>
+          </tr>
+          <tr>
+            <td>OTROS CLIENTES</td>
+            <td>Reportes Gráficos</td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <h4><%=link_to "Volver", satelitalreports_path, class:"btn white be-blue top-space "%></h4>
+  </div>
+</div>
+
+

@@ -1,0 +1,53 @@
+    CLI_AMX_SAT6 = Link.where(["Estado = ? and Razon_Social = ? and Satelite= ?", "Operativo", "AMERICA MOVIL PERU S.A.C.", "Satmex VI"])
+    CLI_TMX_SAT6 = Link.where(["Estado = ? and Razon_Social = ? and Satelite= ?", "Operativo", "TELMEX PERU S.A.", "Satmex VI"])
+    OTR_TMX_SAT6 = Link.where(["Estado = ? and Sector_Red = ? and Satelite= ?", "Operativo", "Corporativo", "Satmex VI"])
+    TOTAL_SAT6 = Link.where(["Estado = ? and Satelite= ?", "Operativo", "Satmex VI"])
+    
+    CLI_AMX_SAT7 = Link.where(["Estado = ? and Razon_Social = ? and Satelite= ?", "Operativo", "AMERICA MOVIL PERU S.A.C.", "Satmex 7"])
+    CLI_TMX_SAT7 = Link.where(["Estado = ? and Razon_Social = ? and Satelite= ?", "Operativo", "TELMEX PERU S.A.", "Satmex 7"])
+    OTR_TMX_SAT7 = Link.where(["Estado = ? and Sector_Red = ? and Satelite= ?", "Operativo", "Corporativo", "Satmex 7"])
+    TOTAL_SAT7 = Link.where(["Estado = ? and Satelite= ?", "Operativo", "Satmex 7"])
+
+    TOTAL_AMX = Link.where(["Estado = ? and Razon_Social= ?", "Operativo", "AMERICA MOVIL PERU S.A.C."])
+    TOTAL_TMX = Link.where(["Estado = ? and Razon_Social= ?", "Operativo", "TELMEX PERU S.A."])
+    TOTAL_OTR = Link.where(["Estado = ? and Sector_Red= ?", "Operativo", "Corporativo"])
+    TOTAL_OPE = Link.where(Estado: "Operativo")
+
+    @COUNT_CLI_AMX_SAT6 = CLI_AMX_SAT6.count
+    @COUNT_CLI_TMX_SAT6 = CLI_TMX_SAT6.count
+    @COUNT_OTR_TMX_SAT6 = OTR_TMX_SAT6.count
+    @COUNT_TOTAL_SAT6 = TOTAL_SAT6.count
+    @COUNT_TOTAL_AMX = TOTAL_AMX.count
+    @MBPS_CLI_AMX_SAT6 = CLI_AMX_SAT6.sum(:Capacidad_Mbps)
+    @Mhz_CLI_AMX_SAT6 = CLI_AMX_SAT6.sum(:Capacidad_Mhz).round(3)
+    @MBPS_CLI_TMX_SAT6 = CLI_TMX_SAT6.sum(:Capacidad_Mbps)
+    @Mhz_CLI_TMX_SAT6 = CLI_TMX_SAT6.sum(:Capacidad_Mhz).round(3)
+    @MBPS_CLI_OTR_SAT6 = OTR_TMX_SAT6.sum(:Capacidad_Mbps)
+    @Mhz_CLI_OTR_SAT6 = OTR_TMX_SAT6.sum(:Capacidad_Mhz).round(3)
+    @MBPS_TOTAL_OTR_SAT6 = TOTAL_SAT6.sum(:Capacidad_Mbps)
+    @Mhz_TOTAL_OTR_SAT6 = TOTAL_SAT6.sum(:Capacidad_Mhz).round(3)    
+    
+    @COUNT_CLI_AMX_SAT7 = CLI_AMX_SAT7.count
+    @COUNT_CLI_TMX_SAT7 = CLI_TMX_SAT7.count
+    @COUNT_OTR_TMX_SAT7 = OTR_TMX_SAT7.count
+    @COUNT_TOTAL_SAT7 = TOTAL_SAT7.count
+    @MBPS_CLI_AMX_SAT7 = CLI_AMX_SAT7.sum(:Capacidad_Mbps)
+    @Mhz_CLI_AMX_SAT7 = CLI_AMX_SAT7.sum(:Capacidad_Mhz).round(3)
+    @MBPS_CLI_TMX_SAT7 = CLI_TMX_SAT7.sum(:Capacidad_Mbps)
+    @Mhz_CLI_TMX_SAT7 = CLI_TMX_SAT7.sum(:Capacidad_Mhz).round(3)
+    @MBPS_CLI_OTR_SAT7 = OTR_TMX_SAT7.sum(:Capacidad_Mbps)
+    @Mhz_CLI_OTR_SAT7 = OTR_TMX_SAT7.sum(:Capacidad_Mhz).round(3)
+
+    @COUNT_TOTAL_AMX = TOTAL_AMX.count
+    @COUNT_TOTAL_TMX = TOTAL_TMX.count
+    @COUNT_TOTAL_OTR = TOTAL_OTR.count
+    @MBPS_TOTAL_AMX = TOTAL_AMX.sum(:Capacidad_Mbps)
+    @Mhz_TOTAL_AMX = TOTAL_AMX.sum(:Capacidad_Mhz).round(3)
+    @MBPS_TOTAL_TMX = TOTAL_TMX.sum(:Capacidad_Mbps)
+    @Mhz_TOTAL_TMX = TOTAL_TMX.sum(:Capacidad_Mhz).round(3)
+    @MBPS_TOTAL_TMX = TOTAL_OTR.sum(:Capacidad_Mbps)
+    @Mhz_TOTAL_TMX = TOTAL_OTR.sum(:Capacidad_Mhz).round(3)
+
+    @COUNT_TOTAL_OPE = TOTAL_OPE.count
+    @MBPS_TOTAL_OPE = TOTAL_OPE.sum(:Capacidad_Mbps)
+    @Mhz_TOTAL_OPE = TOTAL_OPE.sum(:Capacidad_Mhz).round(3)
